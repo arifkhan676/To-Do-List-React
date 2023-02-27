@@ -1,0 +1,12 @@
+.img-circle {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+  }
+  .card {
+    background-color: aqua;
+    width: 50%;
+    border-radius: 5%;
+    text-align: center;
+  }
+  
