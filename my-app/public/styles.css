@@ -1,14 +1,32 @@
-.img-circle {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-  }
-  .card {
-    background-color: aqua;
-    width: 25%;
-    border-radius: 5%;
-    text-align: center;
-    
-  }
+body{
+  padding: 0px;
+  margin: 0px;
+}
+
+.containerPro{
+  position: relative;
+  left: 35%;
+  top: 50px;
+   width: 400px;
+   height: 70vh;
+  background-color: deepskyblue;
+  display: flex;
+  justify-content: center;
+  border-radius: 20px;
+}
+h3{
+  text-align: center;
   
-  
+}
+.inp{
+  width: auto ;
+  padding: 7px 20px;
+  border-radius: 10px;
+}
+.flex-box{
+  display: flex;
+}
+.list{
+  position: relative;
+  top: 20px;
+}

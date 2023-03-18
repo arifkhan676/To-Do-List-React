@@ -1,34 +1,43 @@
-import React from "react";
-import Card from "./Card";
-import contact from "./contact";
-import Avatar from "./Avatar";
-function App() {
-  return (
-    <div>
-              <Avatar img="https://scontent.fdac135-1.fna.fbcdn.net/v/t39.30808-6/333064775_569180981619397_3510004848465821387_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=wHSEdoe7Iw4AX_iHITl&_nc_ht=scontent.fdac135-1.fna&oh=00_AfCAEBMMhucVpwWHYRQO__or-qQv7nt4T97MTAJHHj8tcw&oe=64041C01"/> 
+import React, { useState } from "react";
+import ToDoList from "./ToDoList";
 
-      <Card
-        id={contact[0].id}
-        name={contact[0].name}
-        img={contact[0].imgURL}
-        email={contact[0].email}
-        phone={contact[0].phone}
-      />
-      <Card
-        id={contact[1].id}
-        name={contact[1].name}
-        img={contact[1].imgURL}
-        email={contact[1].email}
-        phone={contact[1].phone}
-      />
-      <Card
-        id={contact[2].id}
-        name={contact[2].name}
-        img={contact[2].imgURL}
-        email={contact[2].email}
-        phone={contact[2].phone}
-      />
+function App() {
+
+  const [name,setName] = useState("");
+  const [listName,setListName] = useState([]);
+
+  function handleChange(event){
+    const Targetval = event.target.value;
+    setName(Targetval);
+  }
+  function handleClick(){
+     setListName(preValue => {
+       return  [...preValue,name];
+     });
+     setName("");
+   
+  }
+ 
+  return (
+    <div className="containerPro">
+    <div className="list-box">
+      <h3>To Do List in React</h3>
+      <div className="flex-box">
+        <input className="inp" onChange={handleChange} type="text" placeholder="Writing list..." value={name} />
+        <button type="button" onClick={handleClick} className="btn btn-dark" >Buy Now</button>
+      </div>
+      <div className="list">
+        <ul>
+
+       {listName.map((todoItem)=>{ // mapping the listName where all the names return a single list item
+         return <ToDoList text = {todoItem} />
+       })}
+
+        </ul>
+      </div>
     </div>
-  );
+  </div>
+
+  )
 }
 export default App;
